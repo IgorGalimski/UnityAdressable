@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Packed Assets_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: c6dd88218ab394a80a80cd37b6892445, type: 2}
-  m_Compression: 1
+  m_Compression: 2
   m_IncludeInBuild: 1
   m_BundledAssetProviderType:
     m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

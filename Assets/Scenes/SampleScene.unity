@@ -878,7 +878,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2005230986}
-        m_MethodName: OnLoadClick
+        m_MethodName: OnInstantiateClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -38,7 +38,7 @@ public class InstantiateScript : MonoBehaviour
         Debug.Log($"Instantiate complete with status{asyncOperationHandle.Status} IsDone:{asyncOperationHandle.IsDone}");
     }
 
-    public async void OnRemoteLoadClick()
+    public void OnRemoteLoadClick()
     {
         var remoteAssetTask = Addressables.LoadResourceLocationsAsync(_remoteAssetKey);
         remoteAssetTask.Completed += OnRemoteLoadComplete;
