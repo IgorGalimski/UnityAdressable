@@ -20,7 +20,8 @@ MonoBehaviour:
   - m_GUID: 765da59bbe840486a933705331872394
     m_Address: Assets/Prefabs/Cube.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - remote
     m_MainAsset: {fileID: 6090202582062496123, guid: 765da59bbe840486a933705331872394,
       type: 3}
     m_TargetAsset: {fileID: 6090202582062496123, guid: 765da59bbe840486a933705331872394,

@@ -60,7 +60,7 @@ MonoBehaviour:
       - m_Id: 8b37fc4f651634b03aaab7df4259ed90
         m_Value: ServerData/[BuildTarget]
       - m_Id: c64d2c2a7d742413cb5d6abe2c4eac0d
-        m_Value: https://s3-eu-west-1.amazonaws.com/s3repo-qa.boardkingsgame.com/1.1.2/[BuildTarget]
+        m_Value: https://s3-eu-west-1.amazonaws.com/s3repo-qa.boardkingsgame.com/Addressable/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: 58371ebdb983747d2b0903cbc7721018
       m_Name: BuildTarget
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - remote
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 08bc319e363114911bedc44952a20abe, type: 2}

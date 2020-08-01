@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
 
 public class InstantiateScript : MonoBehaviour
 {
     [SerializeField] 
     private AssetReference _cubeAssetReference;
+
+    [SerializeField] 
+    private string _remoteAssetKey;
 
     public void OnLoadClick()
     {
@@ -31,5 +36,19 @@ public class InstantiateScript : MonoBehaviour
     private void OnInstantiateComplete(AsyncOperationHandle<GameObject> asyncOperationHandle)
     {
         Debug.Log($"Instantiate complete with status{asyncOperationHandle.Status} IsDone:{asyncOperationHandle.IsDone}");
+    }
+
+    public async void OnRemoteLoadClick()
+    {
+        var remoteAssetTask = Addressables.LoadResourceLocationsAsync(_remoteAssetKey);
+        remoteAssetTask.Completed += OnRemoteLoadComplete;
+    }
+
+    private void OnRemoteLoadComplete(AsyncOperationHandle<IList<IResourceLocation>> asyncOperationHandle)
+    {
+        foreach (var handler in asyncOperationHandle.Result)
+        {
+            Addressables.InstantiateAsync(handler);
+        }
     }
 }
