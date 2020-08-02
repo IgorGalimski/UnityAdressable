@@ -29,8 +29,7 @@ MonoBehaviour:
   - m_GUID: b34f902af21be46b2a23bfacef8e7ecd
     m_Address: Assets/Sprites/helpbox-contact.jpg
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - remote
+    m_SerializedLabels: []
     m_MainAsset: {fileID: 2800000, guid: b34f902af21be46b2a23bfacef8e7ecd, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b34f902af21be46b2a23bfacef8e7ecd, type: 3}
   - m_GUID: bfd6b46a2c4574bd998a4ea8efcf524a

@@ -44,11 +44,12 @@ public class InstantiateScript : MonoBehaviour
         remoteAssetTask.Completed += OnRemoteLoadComplete;
     }
 
-    private void OnRemoteLoadComplete(AsyncOperationHandle<IList<IResourceLocation>> asyncOperationHandle)
+    private async void OnRemoteLoadComplete(AsyncOperationHandle<IList<IResourceLocation>> asyncOperationHandle)
     {
         foreach (var handler in asyncOperationHandle.Result)
         {
-            Addressables.InstantiateAsync(handler);
+            var instance = await Addressables.InstantiateAsync(handler).Task;
+            instance.AddComponent<Rigidbody>();
         }
     }
 }
