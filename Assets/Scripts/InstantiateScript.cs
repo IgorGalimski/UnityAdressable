@@ -24,7 +24,8 @@ public class InstantiateScript : MonoBehaviour
         
         var go = asyncOperationHandle.Result;
 
-        Instantiate(go);
+        var instance = Instantiate(go);
+        instance.AddComponent<Rigidbody>();
     }
 
     public void OnInstantiateClick()
@@ -35,6 +36,8 @@ public class InstantiateScript : MonoBehaviour
 
     private void OnInstantiateComplete(AsyncOperationHandle<GameObject> asyncOperationHandle)
     {
+        asyncOperationHandle.Result.AddComponent<Rigidbody>();
+        
         Debug.Log($"Instantiate complete with status{asyncOperationHandle.Status} IsDone:{asyncOperationHandle.IsDone}");
     }
 
@@ -50,6 +53,10 @@ public class InstantiateScript : MonoBehaviour
         {
             var instance = await Addressables.InstantiateAsync(handler).Task;
             instance.AddComponent<Rigidbody>();
+            
+            var transformPosition = instance.transform.position;
+            transformPosition.x = Random.Range(-5, 5);
+            instance.transform.position = transformPosition;
         }
     }
 }
